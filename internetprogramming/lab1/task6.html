@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Завдання 6-7 / ЛР №1 / Степан Заник</title>
+    <script>
+        let products = new Array(5);
+        products = ["Смартфон", "Соковижималка", "Зарядний пристрій", "Зошит", "Сковорідка"];
+        quantity = ["9", "4", "20", "180", "7"];
+        cost = ["14999", "5999", "1799", "4", "1999"];
+
+        function func1() {
+            let nameprod = task6form.nameinput.value;
+            foundIndex = -1;
+            for (let i = 0; i < products.length; i++) {
+                if (nameprod === products[i]) {
+                    task6form.quan.value = quantity[i];
+                    task6form.cst.value = cost[i];
+                    foundIndex = i;
+                    break;
+                }
+            }
+            if (foundIndex === -1) {
+                task6form.quan.value = "Товар не знайдено";
+                task6form.cst.value = "Товар не знайдено";
+            }
+        }
+        function func2() {
+            if (foundIndex !== -1) {
+                let totalSum = parseInt(quantity[foundIndex]) * parseInt(cost[foundIndex]);
+                task6form.sum.value = totalSum;
+            } else {
+                task6form.sum.value = "Неможливо обчислити";
+            }
+        }
+        function func3() {
+            let selectedProduct = task7form.productSelect.value;
+            foundIndex = -1;
+            for (let i = 0; i < products.length; i++) {
+                if (selectedProduct === products[i]) {
+                    task7form.quan2.value = quantity[i];
+                    task7form.cst2.value = cost[i];
+                    foundIndex = i;
+                    break;
+                }
+            }
+        }
+
+        function func4() {
+            if (foundIndex !== -1) {
+                let totalSum = parseInt(quantity[foundIndex]) * parseInt(cost[foundIndex]);
+                task7form.sum2.value = totalSum;
+            } else {
+                task7form.sum2.value = "Неможливо обчислити";
+            }
+        }
+    </script>
+</head>
+<body>
+<p class="startpage"><a href="../../index.html">Перейти на стартову сторінку хостингу</a></p>
+<p class="general"><a href="lab1.html">Перейти на сторінку лабораторної роботи</a></p>
+<div>
+    <h3>Завдання 6</h3>
+    <form id='task6form'>
+        Введіть назву товару <br><input type="text" id='nameinput' size="50"> <br>
+        <input type="button" onClick="func1();" value="Наявна кількість та вартість"><br>
+        Кількість товарів на складі <br> <input type="text" id='quan' size="50"><br>
+        Вартість товару <br><input type="text" id='cst' size="50"><br>
+        <input type="button" onClick="func2();" value="Загальна сума"><br>
+        Загальна сума товарів <br><input type="text" id='sum' size="50"><br>
+    </form>
+</div>
+<div>
+    <h3>Завдання 7</h3>
+    <form id='task7form'>
+        <select id="productSelect" name="productSelect">
+            <option value="" disabled selected>Оберіть товар</option>
+            <option value="Смартфон">Смартфон</option>
+            <option value="Соковижималка">Соковижималка</option>
+            <option value="Зарядний пристрій">Зарядний пристрій</option>
+            <option value="Зошит">Зошит</option>
+            <option value="Сковорідка">Сковорідка</option>
+        </select>
+        <input type="button" onClick="func3();" value="Наявна кількість та вартість"><br>
+        Кількість товарів на складі <br> <input type="text" id='quan2' size="50"><br>
+        Вартість товару <br><input type="text" id='cst2' size="50"><br>
+        <input type="button" onClick="func4();" value="Загальна сума"><br>
+        Загальна сума товарів <br><input type="text" id='sum2' size="50"><br>
+    </form>
+</div>
+</body>
+</html>

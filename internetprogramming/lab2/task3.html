@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="script.js"></script>
+    <title>Завдання 3 - ЛР №2 - Степан Заник</title>
+</head>
+<body>
+<p class="startpage"><a href="../../index.html">Перейти на стартову сторінку хостингу</a></p>
+<p class="general"><a href="lab2.html">Перейти на сторінку лабораторної роботи</a></p>
+<form id="main_form">
+    <p>Варіант 7: Aij = 1/(2+j)</p>
+    <table>
+        <tr>
+            <td>Кількість строк</td>
+            <td><input type="text" id="t_str" value="5"></td>
+        </tr>
+        <tr>
+            <td> Кількість стовпців</td>
+            <td><input type="text" id="t_stb" value="5"></td>
+        </tr>
+        <tr>
+            <td><input type="button" onClick="build_matrix();" value="Побудувати матрицю"><br>
+            <td>
+        </tr>
+        <tr>
+            <td><input type="button" onClick="calculate_matrix();" value="Розрахувати">
+            <td>
+        </tr>
+    </table>
+    <div id="main_div"></div>
+</form>
+
+</body>
+</html>

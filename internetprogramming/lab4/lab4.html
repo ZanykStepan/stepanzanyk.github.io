@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="script.js">
+    </script>
+    <title>ЛР №4 | ІПЗ-22 | Заник Степан</title>
+</head>
+<body>
+<p class="startpage"><a href="../../index.html">Перейти на стартову сторінку хостингу</a></p>
+<h2>Лабораторна робота №4</h2>
+<div class="mainDiv">
+    <div class="question">
+        <p class="qTitle">1.Що виведе наступний код?</p><code>console.log(typeof NaN);</code><br>
+        <label><input type="radio" class="radio" name="q1" value="1">"number"</label><br>
+        <label><input type="radio" class="radio" name="q1" value="0">"NaN"</label><br>
+        <label><input type="radio" class="radio" name="q1" value="0">"undefined"</label><br>
+        <label><input type="radio" class="radio" name="q1" value="0">"object"</label><br>
+    </div>
+    <div class="question">
+        <p class="qTitle">2.Що виведе наступний код?</p><code>let x;<br>console.log(x);</code><br>
+        <label><input type="radio" class="radio" name="q2" value="1">"undefined"</label><br>
+        <label><input type="radio" class="radio" name="q2" value="0">"null"</label><br>
+        <label><input type="radio" class="radio" name="q2" value="0">"0"</label><br>
+        <label><input type="radio" class="radio" name="q2" value="0">"NaN"</label><br>
+    </div>
+    <div class="question">
+        <p class="qTitle">3.Яка різниця між <code>let</code> і <code>var</code> в JavaScript? (Оберіть 2 варінти
+            відповідей)</p>
+        <label><input type="checkbox" class="checkbox" name="q3" value="1"><code>let</code> має блочну область
+            видимості, а <code>var</code>
+            — функціональну</label><br>
+        <label><input type="checkbox" class="checkbox" name="q3" value="0"><code>let</code> функціональна, а
+            <code>var</code> має
+            глобальну область видимості</label><br>
+        <label><input type="checkbox" class="checkbox" name="q3" value="0"><code>let</code> оголошується тільки один раз
+            в межах
+            блоку, а <code>var</code> може бути оголошено кілька разів</label><br>
+        <label><input type="checkbox" class="checkbox" name="q3" value="1"><code>var</code> може бути доступний до свого
+            оголошення через підняття (hoisting), а <code>let</code> — ні</label><br>
+    </div>
+    <div class="question">
+        <p class="qTitle">4.Що таке "strict mode" в JavaScript? (Оберіть 2 варінти відповідей)</p>
+        <label><input type="checkbox" class="checkbox" name="q4" value="0">Спосіб написання коду без помилок</label><br>
+        <label><input type="checkbox" class="checkbox" name="q4" value="1">Обмежує використання певних небезпечних для
+            безпеки
+            функцій</label><br>
+        <label><input type="checkbox" class="checkbox" name="q4" value="1">Режим, який додає суворі правила для
+            написання
+            коду</label><br>
+        <label><input type="checkbox" class="checkbox" name="q4" value="0">Дозволяє використовувати нові можливості
+            JavaScript</label><br>
+    </div>
+    <div class="question">
+        <p class="qTitle">5.Що виведе наступний код?</p><code>console.log(2 + '2')</code><br>
+        <select id="selectionQ5">
+            <option class="selection" value="1">22</option>
+            <option class="selection" value="0">4</option>
+            <option class="selection" value="0">NaN</option>
+            <option class="selection" value="0">undefined</option>
+        </select>
+    </div>
+    <div class="question">
+        <p class="qTitle">6.Що таке функція зворотного виклику (callback) в JavaScript? (оберіть 2 відповіді через
+            ctrl)</p><br>
+        <select id="selectionQ6" multiple>
+            <option class="selection" value="1">Функція, яка викликається в іншій функції як аргумент</option>
+            <option class="selection" value="0">Функція, що автоматично викликається при запуску сторінки</option>
+            <option class="selection" value="0">Функція, яка повертає іншу функцію</option>
+            <option class="selection" value="1">Функція, яка викликається після завершення певної операції</option>
+        </select>
+    </div>
+    <div class="question">
+        <p class="qTitle">7.Що станеться, якщо до змінної, оголошеної через <code>const</code>, спробувати присвоїти
+            нове значення?<br>Варіанти: <br>Значення зміниться <br>Нічого <br>Помилка</p>
+        <input type="text" class="texte">
+    </div>
+
+    <button type="button" class="EndTestButton" onclick="calculateResult()">Завершити тестування</button>
+    <div class="resultDiv">
+        <p>Результат: <span id="result"></span></p>
+    </div>
+    <div id="resultsTable"></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,24 @@
+* {
+    margin: 3px;
+    padding: 0px;
+}
+.task1, .task2, .task3, .task4, .task5, #main_form{
+    border: 2px solid black;
+    padding: 10px;
+    margin: 3px;
+}
+.startpage, .general{
+    display: flex;
+    justify-content: flex-end;
+}
+.display{
+    width: 400px;
+    height: 50px;
+    font-size: 24px;
+}
+.buttons {
+    width: 400px;
+    display: grid;
+    grid-template-columns: repeat(4,auto);
+    gap: 10px;
+}

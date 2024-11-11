@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>ЛР №1 - Степан Заник</title>
+    <script>
+        function functask2() {
+            let x = 7;
+            let y = 9;
+            let result = x - x * y + Math.pow(y, 2);
+            alert(result);
+        }
+
+        function functask3(a) {
+            formtask3.output3.value = a;
+        }
+
+        function functask4() {
+            let x, y, F;
+            x = parseInt(form4.vx.value);
+            y = parseInt(form4.vy.value);
+            F = parseInt(form4.vF.value);
+            if (x / y > 0) F = 2 * x * y - 3; else if (x > 0 && y < 3) F = x * y / 3; else F = 2 * x - 3 * y;
+            form4.vF.value = "" + F;
+        }
+
+        function functask5() {
+            let i = 2.0, sum = 0.0, cur = 0.0;
+            while (i <= 6) {
+                if (i - 2 === 0) {
+                    i++;
+                    continue;
+                }
+                let factorial = 1;
+                for (let j = 2; j <= i; j++)
+                    factorial *= j;
+                cur = Math.pow(-1, i) * ((i + 1) / (i - 2)) * factorial;
+                sum += cur;
+                i++;
+            }
+            form5.res.value = "" + sum;
+        }
+    </script>
+</head>
+<body>
+<p class="startpage"><a href="../../index.html">Перейти на стартову сторінку хостингу</a></p>
+<div class="task1"><h3>Завдання 1</h3>
+    <p>Це звичайний текст написаний засобами HTML</p>
+    <script>
+        document.write("Заник Степан Петрович")
+    </script>
+    <p>Цей текст також написаний засобами HTML</p>
+    <form>
+        <input type="button" value="Натисніть тут"
+               onClick="alert('Я народився 03.01.2006 року в місті Івано-Франківськ')">
+    </form>
+</div>
+<div class="task2">
+    <h3>Завдання 2</h3>
+    <form>
+        <input type="button" value="Розрахувати" onClick="functask2()">
+    </form>
+</div>
+<div class="task3">
+    <h3>Завдання 3</h3>
+    <form id='formtask3'>
+        <input type="text" size="100" id='input31' value="onBlur" onBlur="functask3('Було втрачено фокус');"> <br>
+        <input type="text" size="100" id='input32' value="onChange"
+               onChange="functask3('Зміст текстового поля форми змінений');"> <br>
+        <input type="text" size="100" id='output3'><br></form>
+</div>
+<div class="task4">
+    <h3>Завдання 4</h3>
+    <form id='form4'>
+        x <input type="text" id="vx"><br>
+        y <input type="text" id="vy"><br>
+        F <input type="text" id="vF"><br>
+        <input type="button" onClick="functask4();" value="Розрахувати">
+    </form>
+</div>
+<div class="task5">
+    <h3>Завдання 5</h3>
+    <form id='form5'>
+        Всі необхідні для розрахунку числа вже задані умовою завдання. <br>
+        Результат: <input type="text" id="res" value=""><br>
+        <input type="button" onClick="functask5();" value="Розрахувати">
+    </form>
+</div>
+<p class="task6-7"><a href="task6.html">Перейти на сторінку з завданнями 6-7.</a></p>
+
+</body>
+</html>

@@ -1,0 +1,16 @@
+* {
+    margin: 3px;
+    padding: 0px;
+}
+body div{
+    border: 2px solid black;
+    padding: 10px;
+    margin: 3px;
+}
+.startpage, .general{
+    display: flex;
+    justify-content: flex-end;
+}
+.task6-7 input{
+    margin: 10px;
+}

@@ -1,0 +1,72 @@
+* {
+    margin: 3px;
+    padding: 0;
+}
+
+.startpage, .general {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.task1, .task2, .task3,.task4,.task5, .task6{
+    border: 2px solid black;
+    padding: 10px;
+    margin: 3px;
+}
+
+.task1inputs {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+}
+
+.task1 input {
+    width: 200px;
+    height: 36px;
+}
+
+.task2, .task3, .task4{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.task2 h3, .task3 h3, .task4 h3 {
+    align-self: start;
+}
+
+#t2display, #t3display {
+    width: 80%;
+    height: 120px;
+    font-size: 24px;
+
+}
+
+#t2clean {
+    width: 400px;
+    font-size: 24px;
+}
+
+#t2screenKeyboard, #t3screenKeyboard {
+    width: 80%;
+    text-align: center;
+}
+
+#t2screenKeyboard button, #t3screenKeyboard button {
+    width: 40px;
+    height: 40px;
+    font-size: 24px;
+}
+
+#t3clean, #changeLang {
+    width: 250px;
+    font-size: 24px;
+}
+#t4img{
+    border:2px solid black;
+    height:255px;
+    width:255px;
+}
+#t4previous, #t4next{
+    width: 120px;
+}

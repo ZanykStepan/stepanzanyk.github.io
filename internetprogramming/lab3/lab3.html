@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="script.js"></script>
+    <title>ЛР №3 - Степан Заник</title>
+</head>
+<body onload="createKeyboard(), createKeyboardEn(), showImage(), generateQuestion(), menu()">
+<p class="startpage"><a href="../../index.html">Перейти на стартову сторінку хостингу</a></p>
+<h2>Лабораторна робота №3</h2>
+<div class="task1">
+    <h3>Завдання 1</h3>
+    <h4>Варіант 7</h4>
+    <h4>Обчислення площі трапеції</h4>
+    <div class="task1inputs">
+        <label for="t1a">Сторона A (Нижня основа трапеції):</label> <input type="text" id="t1a" onchange="t1function()">
+        <label for="t1b">Сторона B (Верхня основа трапеції):</label> <input type="text" id="t1b"
+                                                                            onchange="t1function()">
+        <label for="t1c">Сторона C (Ліва бічна сторона трапеції):</label> <input type="text" id="t1c"
+                                                                                 onchange="t1function()">
+        <label for="t1d">Сторона D (Права бічна сторона трапеції):</label> <input type="text" id="t1d"
+                                                                                  onchange="t1function()">
+        <label for="t1area">Площа трапеції:</label> <input type="text" id="t1area" readonly>
+    </div>
+</div>
+<div class="task2">
+    <h3>Завдання 2</h3>
+    <input type="text" id="t2display" readonly><br>
+    <div id="t2screenKeyboard"></div>
+    <button onclick="clean2()" id="t2clean">Очистити</button>
+    <br>
+</div>
+<div class="task3">
+    <h3>Завдання 3</h3>
+    <input type="text" id="t3display" readonly><br>
+    <div id="t3screenKeyboard"></div>
+    <div class="t3buttons">
+        <button onclick="toggleLanguage()" id="changeLang">Змінити мову</button>
+        <button onclick="clean3()" id="t3clean">Очистити</button>
+    </div>
+</div>
+<div class="task4">
+    <h3>Завдання 4</h3>
+    <input type="image" id="t4img">
+    <div class="t4buttons">
+        <button id="t4previous" onclick="prevImage()">Назад</button>
+        <button id="t4next" onclick="nextImage()">Вперед</button>
+    </div>
+</div>
+<div class="task5">
+    <h3>Завдання 5</h3>
+    <p id="t5question">Питання:</p>
+    <input type="text" id="t5answer" placeholder="Введіть відповідь">
+    <button id="t5checkBtn" onclick="checkAnswer()">Перевірити</button>
+    <button id="t5nextBtn" onclick="nextQuestion()">Наступне питання</button>
+    <p id="t5result"></p>
+    <p id="t5score">Рахунок: 0 із 0</p>
+</div>
+<div class="task6">
+    <h3>Завдання 6</h3>
+    <div id="t6container">
+    </div>
+</div>
+</body>
+</html>

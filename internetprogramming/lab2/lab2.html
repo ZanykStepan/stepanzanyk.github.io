@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="script.js"></script>
+    <title>ЛР №2 - Степан Заник</title>
+</head>
+<body onload="TimeDate()">
+<p class="startpage"><a href="../../index.html">Перейти на стартову сторінку хостингу</a></p>
+<div class="task1">
+    <h3>Завдання 1</h3>
+    <p>Варіант 7: hour/min/sec+year*moun*day</p>
+    <form name="TimeDate">
+        <p> Час і дата: <input type="text" name="timeanddate" size="40"></p>
+    </form>
+</div>
+<div class="task2">
+    <h3>Завдання 2</h3>
+    <div class="calculator">
+        <input type="text" class="display" id="display">
+        <div class="buttons">
+            <button onClick="appendToDisplay('1')">1</button>
+            <button onClick="appendToDisplay('2')">2</button>
+            <button onClick="appendToDisplay('3')">3</button>
+            <button onClick="appendToDisplay('4')">4</button>
+            <button onClick="appendToDisplay('5')">5</button>
+            <button onClick="appendToDisplay('6')">6</button>
+            <button onClick="appendToDisplay('7')">7</button>
+            <button onClick="appendToDisplay('8')">8</button>
+            <button onClick="appendToDisplay('9')">9</button>
+            <button onClick="appendToDisplay('0')">0</button>
+            <button onClick="appendToDisplay('.')" style="grid-column: span 2">.</button>
+            <button class="operator" onClick="appendToDisplay('+')">+</button>
+            <button class="operator" onClick="appendToDisplay('-')">-</button>
+            <button class="operator" onClick="appendToDisplay('*')">*</button>
+            <button class="operator" onClick="appendToDisplay('/')">/</button>
+            <button class="clear" onClick="clearDisplay()" style="grid-column: span 2">Clear</button>
+            <button class="equal" onClick="calculate()" style="grid-column: span 2">=</button>
+        </div>
+    </div>
+
+</div>
+<div class="task3">
+    <h3><a href="task3.html">Завдання 3</a></h3>
+</div>
+<div class="task4">
+    <h3>Завдання 4</h3>
+    <p>Введіть ділене: </p><input type="number" id="first_number"><br>
+    <p>Введіть дільник: </p><input type="number" id="second_number"><br>
+    <button onClick="calculate4()">Обчислити остачу</button>
+    <br>
+    <button onClick="outputInConsole4()">Запустити завдання з виведенням масиву</button>
+</div>
+<div class="task5">
+    <h3>Завдання 5</h3>
+    <button onclick="consoleTask5()">Вивести в console</button>
+</div>
+</body>
+</html>
