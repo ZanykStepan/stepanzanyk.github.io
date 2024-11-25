@@ -1,0 +1,51 @@
+* {
+    margin: 3px;
+    padding: 0;
+}
+
+.startpage, .general {
+    display: flex;
+    justify-content: flex-end;
+}
+
+button {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 10px 20px;
+    background-color: #559200FF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border: 1px solid #ccc;
+}
+
+th {
+    background-color: #f4f4f4;
+    font-weight: bold;
+}
+
+.mainDiv {
+    font-size: 16px;
+}
+
+.mainDiv p {
+    font-weight: bold;
+}
+
+.resultDiv p {
+    font-weight: bold;
+    font-size: 20px;
+}
