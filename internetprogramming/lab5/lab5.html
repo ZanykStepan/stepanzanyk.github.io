@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ЛР №5 | ІПЗ-22 | Заник Степан</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+<body>
+<p class="startpage"><a href="../../index.html">Перейти на стартову сторінку хостингу</a></p>
+<h2>Лабораторна робота №5</h2>
+<div class="tabbed_box">
+    <h4>Browse Site <small>Select a Tab</small></h4>
+    <ul class="tabs">
+        <li><a href="javascript:void(0);" id="tab_1" class="active" onclick="tabSwitch('tab_1', 'content_1')">Archives</a></li>
+        <li><a href="javascript:void(0);" id="tab_2" onclick="tabSwitch('tab_2', 'content_2')">Topics</a></li>
+        <li><a href="javascript:void(0);" id="tab_3" onclick="tabSwitch('tab_3', 'content_3')">Pages</a></li>
+    </ul>
+    <div id="content_1" class="content active">
+        <ul>
+            <li><a href="#">HTML Tutorials</a> <small>6 Posts</small></li>
+            <li><a href="#">CSS Techniques</a> <small>2 Posts</small></li>
+            <li><a href="#">Website builds</a> <small>0 Posts</small></li>
+            <li><a href="#">Flash</a> <small>0 Posts</small></li>
+            <li><a href="#">Site Skills</a> <small>13 Posts</small></li>
+            <li><a href="#">Some Category</a> <small>13 Posts</small></li>
+        </ul>
+    </div>
+    <div id="content_2" class="content">
+        <ul>
+            <li><a href="#">Topic 1</a> <small>5 Posts</small></li>
+            <li><a href="#">Topic 2</a> <small>8 Posts</small></li>
+        </ul>
+    </div>
+    <div id="content_3" class="content">
+        <ul>
+            <li><a href="#">Page 1</a></li>
+            <li><a href="#">Page 2</a></li>
+        </ul>
+    </div>
+</div>
+</body>
+</html>
