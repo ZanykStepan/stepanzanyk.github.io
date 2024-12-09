@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: "Montserrat", sans-serif;
+        }
+
+        .startpage, .general {
+            display: flex;
+            justify-content: flex-end;
+            margin: 5px;
+        }
+
+        .startpage a, .general a {
+            padding: 5px;
+            color: white;
+            text-decoration: none;
+            background: #1A2C47;
+            border-radius: 5px;
+        }
+
+        div {
+            width: 500px;
+            margin: 10px;
+            padding: 10px;
+            background-color: #1A2C47;
+            border-radius: 10px;
+            color: white;
+        }
+        input {
+            width: 200px;
+            padding: 10px;
+            border-radius: 10px;
+            font-size: 14px;
+        }
+
+        p {
+            color: white;
+            font-weight: bold;
+        }
+        button {
+            background-color: darkslategray;
+            color: white;
+            padding: 10px 20px;
+            border: 3px solid white;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        button:hover {
+            background-color: #1A2C47;
+        }
+    </style>
+    <script>
+        const time = new Date();
+        let hours = time.getHours();
+        let minutes = time.getMinutes();
+        let seconds = time.getSeconds();
+
+        function displayTime() {
+            // Використовуємо змінні hours, minutes, seconds
+            const formattedTime = `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+            document.getElementById("timeDisplay").innerText = `Поточний час: ${formattedTime}`;
+        }
+
+        function addSeconds(secondsToAdd) {
+            time.setSeconds(time.getSeconds() + secondsToAdd);
+            hours = time.getHours();
+            minutes = time.getMinutes();
+            seconds = time.getSeconds();
+            displayTime();
+        }
+
+        function addMinutes(minutesToAdd) {
+            addSeconds(minutesToAdd * 60);
+        }
+
+        function addHours(hoursToAdd) {
+            addSeconds(hoursToAdd * 3600);
+        }
+
+        function handleAddSeconds() {
+            const secondsInput = Number(document.getElementById("secondsInput").value);
+            addSeconds(secondsInput);
+        }
+
+        function handleAddMinutes() {
+            const minutesInput = Number(document.getElementById("minutesInput").value);
+            addMinutes(minutesInput);
+        }
+
+        function handleAddHours() {
+            const hoursInput = Number(document.getElementById("hoursInput").value);
+            addHours(hoursInput);
+        }
+
+    </script>
+    <title>Task 1 / ЛР №8 / Заник Степан</title>
+</head>
+<body>
+<p class="startpage"><a href="../../index.html">Перейти на стартову сторінку хостингу</a></p>
+<p class="general"><a href="lab8.html">Перейти на головну сторінку лабораторної роботи</a></p>
+<h2>Завдання №1 / Лабораторна робота №8</h2>
+<div><p id="timeDisplay">Поточний час: 00:00:00</p></div>
+
+
+<div>
+    <label for="secondsInput">Додати секунди:</label>
+    <input type="number" id="secondsInput" placeholder="Кількість секунд">
+    <button onclick="handleAddSeconds()">Додати</button>
+</div>
+
+<div>
+    <label for="minutesInput">Додати хвилини:</label>
+    <input type="number" id="minutesInput" placeholder="Кількість хвилин">
+    <button onclick="handleAddMinutes()">Додати</button>
+</div>
+
+<div>
+    <label for="hoursInput">Додати години:</label>
+    <input type="number" id="hoursInput" placeholder="Кількість годин">
+    <button onclick="handleAddHours()">Додати</button>
+</div>
+</body>
+</html>

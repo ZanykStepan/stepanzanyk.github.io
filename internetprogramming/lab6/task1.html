@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+    <style>
+        body, input, button {
+            font-family: "Montserrat", sans-serif;
+        }
+
+        .startpage, .general {
+            display: flex;
+            justify-content: flex-end;
+            margin: 5px;
+        }
+
+        .startpage a, .general a {
+            padding: 5px;
+            color: white;
+            text-decoration: none;
+            background: #1A2C47;
+            border-radius: 5px;
+        }
+
+        label {
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        input {
+            height: 32px;
+            width: 300px;
+            border-radius: 10px;
+        }
+
+        button {
+            background-color: #1A2C47;
+            color: white;
+            padding: 10px;
+            border-radius: 10px;
+            height: 40px;
+            width: 120px;
+        }
+    </style>
+    <script>
+        function checkEmail() {
+            let emailInput = document.getElementById('input').value;
+            let r = /^([a-z0-9]+)(\.[a-z0-9]+)*@([a-z0-9]+)(\.[a-z0-9]+)*$/i;
+            let matchResult = emailInput.match(r);
+            let resultDiv = document.getElementById('result');
+            resultDiv.innerHTML = "";
+
+            if (matchResult) {
+                for (let i = 0; i < matchResult.length; i++) {
+                    resultDiv.innerHTML += "<hr> matchResult [" + i + "] " + matchResult[i];
+                }
+            } else {
+                resultDiv.innerHTML = "Електронна адреса не відповідає формату.";
+            }
+        }
+    </script>
+    <title>Task 1 / ЛР №6 / Заник Степан</title>
+</head>
+<body>
+<p class="startpage"><a href="../../index.html">Перейти на стартову сторінку хостингу</a></p>
+<p class="general"><a href="lab6.html">Перейти на головну сторінку лабораторної роботи</a></p>
+<h2>Завдання 1 / Лабораторна робота №6</h2>
+<label for="input">Введіть e-mail:</label>
+<input type="text" id="input" placeholder="example@mail.com">
+<button onclick="checkEmail()">Перевірити</button>
+<div id="result"></div>
+</body>
+</html>

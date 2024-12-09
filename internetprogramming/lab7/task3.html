@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+    <title>Task 3 / ЛР №7 / Заник Степан</title>
+    <style>
+        body {
+            font-family: "Montserrat", sans-serif;
+        }
+
+        .startpage, .general {
+            display: flex;
+            justify-content: flex-end;
+            margin: 5px;
+        }
+
+        .startpage a, .general a {
+            padding: 5px;
+            color: white;
+            text-decoration: none;
+            background: #1A2C47;
+            border-radius: 5px;
+        }
+
+
+        div {
+            margin: 10px;
+            padding: 10px;
+            background-color: #1A2C47;
+            color: white;
+            border-radius: 10px;
+        }
+
+        input, textarea {
+            width: 50%;
+            padding: 10px;
+            margin: 10px;
+            border-radius: 10px;
+            font-size: 14px;
+        }
+
+        input:focus, textarea:focus {
+            outline: none;
+        }
+
+        button {
+            background-color: darkslategray;
+            color: white;
+            width: 120px;
+            margin-left: 10px;
+            padding: 10px;
+            border: 3px solid white;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        button:hover {
+            background-color: #1A2C47;
+        }
+        h3{
+            margin-left: 10px;
+        }
+        p {
+            color: white;
+            font-weight: bold;
+            margin-left: 10px;
+
+        }
+    </style>
+    <script>
+        function func1() {
+            const snakeCaseValue = document.getElementById("snakeCaseInput").value;
+            const camelCaseResult = snakeCaseValue.replace(/_([a-z])/g, (_, letter) => letter.toUpperCase());
+            document.getElementById("camelCaseOutput").innerText = `Результат: ${camelCaseResult}`;
+        }
+
+        function func2() {
+            const camelCaseValue = document.getElementById("camelCaseInput").value;
+            const snakeCaseResult = camelCaseValue.replace(/([A-Z])/g, '_$1').toLowerCase();
+            document.getElementById("snakeCaseOutput").innerText = `Результат: ${snakeCaseResult}`;
+        }
+
+        function func3() {
+            const dateText = document.getElementById("dateInput").value;
+            const formattedDates = dateText.replace(/(\d{4})\/(\d{2})\/(\d{2})/g, '$3.$2.$1');
+            document.getElementById("formattedDateOutput").innerText = `Результат: ${formattedDates}`;
+        }
+    </script>
+</head>
+<body>
+<p class="startpage"><a href="../../index.html">Перейти на стартову сторінку хостингу</a></p>
+<p class="general"><a href="lab7.html">Перейти на головну сторінку лабораторної роботи</a></p>
+<h2>Завдання №3 / Лабораторна робота №7</h2>
+
+<div>
+    <h3>1. Перетворення з Snake case у Camel case</h3>
+    <input type="text" id="snakeCaseInput" placeholder="Введіть Snake case (напр. my_variable)">
+    <button onclick="func1()">Перетворити</button>
+    <p id="camelCaseOutput"></p>
+</div>
+
+<div>
+    <h3>2. Перетворення з Camel case у Snake case</h3>
+    <input type="text" id="camelCaseInput" placeholder="Введіть Camel case (напр. myVariable)">
+    <button onclick="func2()">Перетворити</button>
+    <p id="snakeCaseOutput"></p>
+</div>
+
+<div>
+    <h3>3. Заміна дати з формату yyyy/mm/dd на dd.mm.yyyy</h3>
+    <textarea id="dateInput" placeholder="Введіть текст з датою у форматі yyyy/mm/dd" rows="5" cols="40"></textarea><br>
+    <button onclick="func3()">Перетворити</button>
+    <p id="formattedDateOutput"></p>
+</div>
+</body>
+</html>

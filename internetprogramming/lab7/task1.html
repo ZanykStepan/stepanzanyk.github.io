@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+    <title>Task 1 / ЛР №7 / Заник Степан</title>
+    <style>
+        body {
+            font-family: "Montserrat", sans-serif;
+        }
+
+        .startpage, .general {
+            display: flex;
+            justify-content: flex-end;
+            margin: 5px;
+        }
+
+        .startpage a, .general a {
+            padding: 5px;
+            color: white;
+            text-decoration: none;
+            background: #1A2C47;
+            border-radius: 5px;
+        }
+
+        div {
+            margin: 10px;
+            padding: 10px;
+            background-color: #1A2C47;
+            border-radius: 10px;
+            color: white;
+        }
+
+        input {
+            width: 400px;
+            padding: 10px;
+            border-radius: 10px;
+            font-size: 14px;
+        }
+
+
+        button {
+            background-color: darkslategray;
+            color: white;
+            padding: 10px 20px;
+            border: 3px solid white;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        button:hover {
+            background-color: #1A2C47;
+        }
+
+        p {
+            color: white;
+            font-weight: bold;
+        }
+    </style>
+    <script>
+        function reverseSequence(sequence) {
+            const numbers = sequence.split(' ').map(Number);
+            const allNumbers = numbers.every(num => !isNaN(num) && Number.isFinite(num));
+            if (!allNumbers) {
+                return ("Помилка! Введіть рядок, що містить лише числа.");
+            } else {
+                return numbers.reverse().join(' ');
+            }
+        }
+
+        function removeZerosFromArray(array) {
+            let arrayString = array.join(' ');
+            let withoutZero = arrayString.replace(0, '');
+            let newArray = withoutZero.split(',');
+            return newArray;
+        }
+
+        function reverseText(text) {
+            const isOnlyLetters = /^[А-Яа-яA-Za-z\s,]+$/.test(text);
+            if (!isOnlyLetters) {
+                return ("Помилка! Введіть рядок, що містить лише літери.");
+            } else {
+                return text.split('').reverse().join('');
+            }
+        }
+
+        function swapWords(sentence) {
+            const words = sentence.split(' ');
+            if (words.length >= 3) {
+                [words[1], words[2]] = [words[2], words[1]];
+                return words.join(',');
+            }
+            else{
+                return "Помилка! Речення повинно містити принаймні три слова.";
+            }
+        }
+
+        function showReversedSequence() {
+            const input = document.getElementById("numberSequenceInput").value;
+            const result = reverseSequence(input);
+            document.getElementById("reversedSequenceOutput").innerText = `Реверс: ${result}`;
+        }
+
+        function showFilteredArray() {
+            const input = document.getElementById("numberArrayInput").value.split(' ').map(Number);
+            const result = removeZerosFromArray(input);
+            document.getElementById("filteredArrayOutput").innerText = `Без нулів: ${result}`;
+        }
+
+        function showReversedText() {
+            const input = document.getElementById("textInput").value;
+            const result = reverseText(input);
+            document.getElementById("reversedTextOutput").innerText = `Реверс: ${result}`;
+        }
+
+        function showModifiedSentence() {
+            const input = document.getElementById("sentenceInput").value;
+            const result = swapWords(input);
+            document.getElementById("modifiedSentenceOutput").innerText = `Результат: ${result}`;
+        }
+    </script>
+
+</head>
+<body>
+<p class="startpage"><a href="../../index.html">Перейти на стартову сторінку хостингу</a></p>
+<p class="general"><a href="lab7.html">Перейти на головну сторінку лабораторної роботи</a></p>
+<h2>Завдання №1 / Лабораторна робота №7</h2>
+<div>
+    <h2>1. Реалізація split (Обернення чисел)</h2>
+    <input type="text" id="numberSequenceInput" placeholder="Введіть числа через пробіл">
+    <button onclick="showReversedSequence()">Обернути числа</button>
+    <p id="reversedSequenceOutput"></p>
+</div>
+
+<div>
+    <h2>2. Реалізація no_zeros() (Прибрати нулі з масиву)</h2>
+    <input type="text" id="numberArrayInput" placeholder="Введіть числа через пробіл">
+    <button onclick="showFilteredArray()">Прибрати нулі</button>
+    <p id="filteredArrayOutput"></p>
+</div>
+
+<div>
+    <h2>3. Реалізація reverser() (Обернення тексту)</h2>
+    <input type="text" id="textInput" placeholder="Введіть текст">
+    <button onclick="showReversedText()">Обернути текст</button>
+    <p id="reversedTextOutput"></p>
+</div>
+
+<div>
+    <h2>4. Реалізація replace() (Заміна)</h2>
+    <input type="text" id="sentenceInput" value="Я не люблю морозиво">
+    <button onclick="showModifiedSentence()">Замінити</button>
+    <p id="modifiedSentenceOutput"></p>
+</div>
+
+</body>
+</html>

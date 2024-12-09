@@ -1,0 +1,125 @@
+.startpage{
+    display: flex;
+    justify-content: flex-start;
+    padding-left: 24px;
+}
+
+.startpage a {
+    color: white;
+}
+
+h2 {
+    color: white;
+    padding-left: 24px;
+
+}
+body {
+    font-family: "Montserrat", sans-serif;
+    background-color: #1F3250;
+    color: #ffffff;
+    margin: 0;
+    padding: 0;
+}
+
+h4 {
+    margin: 20px 10px;
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: -1px;
+    color: #ffffff;
+}
+
+h4 small {
+    font-size: 14px;
+    font-weight: normal;
+    color: #A9BED5;
+    text-transform: uppercase;
+    margin-left: 8px;
+}
+
+.tabbed_box {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #2D4465;
+    border-radius: 8px;
+}
+
+ul.tabs {
+    margin:0px; padding:0px;
+    margin-top:5px;
+    margin-bottom:6px;
+
+}
+ul.tabs li {
+    list-style:none;
+    display:inline;
+}
+
+.tabs li {
+    margin: 0 5px;
+}
+
+.tabs a {
+    display: inline-block;
+    padding:8px 14px 8px 14px;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #ffffff;
+    text-decoration: none;
+    background-color: #1F3250;
+    border: 1px solid #1A2C47;
+    border-bottom: none;
+    border-radius: 5px;
+}
+
+.tabs a.active {
+    background-color: #ffffff;
+    color: #1F3250;
+    font-weight: bold;
+}
+
+/* Вміст вкладок */
+.content {
+    display: none;
+    background-color: #ffffff;
+    color: #1F3250;
+    padding: 20px;
+    border: 1px solid #1A2C47;
+    border-radius: 5px;
+}
+
+.content.active {
+    display: block;
+}
+
+.content ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.content ul li {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid #E0E6ED;
+}
+
+.content ul li:last-child {
+    border-bottom: none;
+}
+
+.content ul li a {
+    color: #1F3250;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.content ul li small {
+    color: #7C899A;
+    font-size: 12px;
+    font-weight: normal;
+}

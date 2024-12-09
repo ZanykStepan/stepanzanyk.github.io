@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: "Montserrat", sans-serif;
+        }
+
+        .startpage, .general {
+            display: flex;
+            justify-content: flex-end;
+            margin: 5px;
+        }
+
+        .startpage a, .general a {
+            padding: 5px;
+            color: white;
+            text-decoration: none;
+            background: #1A2C47;
+            border-radius: 5px;
+        }
+
+        input {
+            width: 200px;
+            padding: 10px;
+            border-radius: 10px;
+            font-size: 14px;
+        }
+
+        p {
+            color: white;
+            font-weight: bold;
+        }
+
+        h3 {
+            margin-left: 10px;
+        }
+
+        button {
+            background-color: darkslategray;
+            color: white;
+            padding: 10px 20px;
+            border: 3px solid white;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 14px;
+            margin-left: 10px;
+
+        }
+
+        button:hover {
+            background-color: #1A2C47;
+        }
+
+        .output {
+            margin: 10px;
+            padding: 10px;
+            border-radius: 10px;
+            font-size: 14px;
+            background-color: #1A2C47;
+            color: white;
+        }
+
+        div {
+            border: 3px solid #1A2C47;
+            border-radius: 10px;
+            margin: 5px;
+            padding-left: 10px;
+        }
+    </style>
+    <script>
+        function func1() {
+            const now = new Date();
+            const days = ['неділя', 'понеділок', 'вівторок', 'середа', 'четвер', 'п’ятниця', 'субота'];
+            const months = ['січня', 'лютого', 'березня', 'квітня', 'травня', 'червня', 'липня', 'серпня', 'вересня', 'жовтня', 'листопада', 'грудня'];
+
+            const weekday = days[now.getDay()];
+            const daynow = now.getDate();
+            const monthnow = months[now.getMonth()];
+            const yearnow = now.getFullYear();
+            const timenow = now.toLocaleTimeString('uk-UA', {hour: '2-digit', minute: '2-digit'});
+
+            document.getElementById("output1").innerHTML = `<p>Сьогодні: ${daynow} ${monthnow} ${yearnow}<br>День тижня: ${weekday}<br>Час: ${timenow}</p>`;
+        }
+
+        function func2() {
+            const now = new Date();
+            const days = ['неділя', 'понеділок', 'вівторок', 'середа', 'четвер', 'п’ятниця', 'субота'];
+            const daynum = (now.getDay() === 0) ? 7 : now.getDay();
+            const dayname = days[daynum === 7 ? 0 : daynum];
+
+            document.getElementById("output2").innerHTML = `<p>Номер дня тижня: ${daynum}<br>Назва дня тижня: ${dayname}</p>`;
+        }
+
+
+        function func3() {
+            const days = parseInt(document.getElementById("input3").value);
+            const now = new Date();
+            now.setDate(now.getDate() + days);
+            document.getElementById("output3").innerHTML = `<p>Розрахована дата: ${now.toLocaleDateString('uk-UA')}</p>`;
+        }
+
+        function func4() {
+            const year = parseInt(document.getElementById("input41").value);
+            const month = parseInt(document.getElementById("input42").value);
+            const lastday = new Date(year, month, 0).getDate();
+
+            document.getElementById("output4").innerHTML = `<p>Останній день місяця: ${lastday}</p>`;
+        }
+
+        function func5() {
+            const now = new Date();
+            const startday = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+            const endday = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 1);
+
+            const secondpassed = Math.floor((now - startday) / 1000);
+            const secondstoend = Math.floor((endday - now) / 1000);
+
+            document.getElementById("output5").innerHTML = `<p>Пройшло секунд: ${secondpassed}, Залишилося секунд: ${secondstoend}</p>`;
+        }
+
+        function func6() {
+            const input6 = document.getElementById("input6").value;
+
+            const dateTimeRegex = /(\d{2})\.(\d{2})\.(\d{4}) (\d{2}):(\d{2})/;
+            const match = input6.match(dateTimeRegex);
+
+            if (!match) {
+                document.getElementById("output6").innerHTML = `<p>${input6}</p>`;
+                return;
+            }
+
+            const [day, month, year, hours, minutes] = match.slice(1).map(Number);
+            const enteredDate = new Date(year, month - 1, day, hours, minutes);
+
+            const now = new Date();
+            const secondsDifference = Math.floor((now - enteredDate) / 1000); // Різниця в секундах
+            const minutesDifference = Math.floor(secondsDifference / 60); // Різниця в хвилинах
+
+            let timeDescription;
+
+            if (secondsDifference < 60) {
+                timeDescription = `${secondsDifference} сек. назад`;
+            } else if (minutesDifference < 60) {
+                timeDescription = `${minutesDifference} хв. назад`;
+            } else {
+                const formattedDate = `${String(day).padStart(2, '0')}.${String(month).padStart(2, '0')}.${year} ${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}`;
+                timeDescription = `Повна дата: ${formattedDate}`;
+            }
+
+            const restText = input6.replace(match[0], '').trim();
+
+            const result = `<p>${restText ? restText + ' ' : ''}${timeDescription}</p>`;
+
+            document.getElementById("output6").innerHTML = result;
+        }
+
+    </script>
+    <title>Task 2 / ЛР №8 / Заник Степан</title>
+</head>
+<body>
+<p class="startpage"><a href="../../index.html">Перейти на стартову сторінку хостингу</a></p>
+<p class="general"><a href="lab8.html">Перейти на головну сторінку лабораторної роботи</a></p>
+<h2>Завдання №2 / Лабораторна робота №8</h2>
+<div>
+    <h3>2.1. Поточна дата і час</h3>
+    <button onclick="func1()">Показати</button>
+    <div id="output1" class="output"></div>
+</div>
+
+<div>
+    <h3>2.2. День і номер дня в тижні</h3>
+    <button onclick="func2()">Показати</button>
+    <div id="output2" class="output"></div>
+</div>
+
+<div>
+    <h3>2.3. Обчислення дати на N днів назад або вперед</h3>
+    <label for="input3">Кількість днів:</label>
+    <input type="number" id="input3">
+    <button onclick="func3()">Обчислити</button>
+    <div id="output3" class="output"></div>
+</div>
+
+<div>
+    <h3>2.4. Визначення останнього дня місяця</h3>
+    <label for="input41">Рік:</label>
+    <input type="number" id="input41" placeholder="Наприклад, 2024">
+    <label for="input42">Місяць (1-12):</label>
+    <input type="number" id="input42" placeholder="1-12">
+    <button onclick="func4()">Визначити</button>
+    <div id="output4" class="output"></div>
+</div>
+
+<div>
+    <h3>2.5. Секунди від початку дня і до кінця</h3>
+    <button onclick="func5()">Обчислити</button>
+    <div id="output5" class="output"></div>
+</div>
+
+<div>
+    <h3>2.6. Формування дати з текстового вводу</h3>
+    <label for="input6">Дата і час (формат "дд.мм.рррр год:хв"):</label>
+    <input type="text" id="input6" placeholder="Наприклад, 01.12.2024 14:30">
+    <button onclick="func6()">Виконати</button>
+    <div id="output6" class="output"></div>
+</div>
+
+
+</body>
+</html>

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+    <title>Task 2 / ЛР №6 / Заник Степан</title>
+    <style>
+        body, input, button {
+            font-family: "Montserrat", sans-serif;
+        }
+
+        .startpage, .general {
+            display: flex;
+            justify-content: flex-end;
+            margin: 5px;
+        }
+
+        .startpage a, .general a {
+            padding: 5px;
+            color: white;
+            text-decoration: none;
+            background: #1A2C47;
+            border-radius: 5px;
+        }
+
+        form {
+            margin: 3px;
+            width: 400px;
+            padding: 20px;
+            border: 3px solid #1A2C47;
+            border-radius: 10px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #1A2C47;
+            font-weight: bold;
+        }
+
+        input {
+            width: 95%;
+            padding: 10px;
+            border-radius: 5px;
+            background-color: #1A2C47;
+            color: white;
+        }
+
+        input:focus {
+            outline: none;
+        }
+
+        input.valid {
+            border-color: green;
+        }
+
+        input.invalid {
+            border-color: red;
+        }
+
+        .error-message {
+            color: red;
+            font-size: 12px;
+            display: none;
+        }
+
+        .valid-mark {
+            display: none;
+            color: green;
+        }
+
+        .valid-mark.visible {
+            display: inline;
+        }
+
+        .error-message.visible {
+            display: block;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px 15px;
+            background-color: #1A2C47;
+            color: white;
+            border: 3px solid #1A2C47;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: white;
+            color: #1A2C47;
+        }
+    </style>
+    <script>
+        function handleSubmit(event) {
+            event.preventDefault();
+            checkForm();
+        }
+
+        function checkForm() {
+            validateField('emailInput', /^[a-z0-9._%+-]+@pnu\.edu\.ua$/i, "Введіть правильний e-mail (example@pnu.edu.ua)");
+            validateField('fullNameInput', /^[А-ЯA-Z][а-яa-z]+ [А-ЯA-Z]+$/, "Ім'я з великої, прізвище — всі великі.");
+            validateField('usernameInput', /^[a-zA-Z0-9]+$/, "Логін повинен містити лише латинські літери.");
+            validateField('passwordInput', /^(?=.*[A-Za-z])(?=.*\d)(?=.*[_\-!@#$%^&*])[A-Za-z\d_\-!@#$%^&*]{8,}$/, "Пароль має містити мінімум 8 символів.");
+            validateField('postalCodeInput', /^\d{5}$/, "Поштовий індекс повинен містити 5 цифр.");
+        }
+
+        function validateField(inputId, regex, errorMessage) {
+            const input = document.getElementById(inputId);
+            const validMark = input.nextElementSibling;
+            const errorDiv = input.parentElement.querySelector('.error-message');
+
+            if (regex.test(input.value)) {
+                input.classList.remove('invalid');
+                input.classList.add('valid');
+                errorDiv.classList.remove('visible');
+                validMark.classList.add('visible');
+            } else {
+                input.classList.remove('valid');
+                input.classList.add('invalid');
+                errorDiv.textContent = errorMessage;
+                errorDiv.classList.add('visible');
+                validMark.classList.remove('visible');
+            }
+        }
+    </script>
+</head>
+<body>
+<p class="startpage"><a href="../../index.html">Перейти на стартову сторінку хостингу</a></p>
+<p class="general"><a href="lab6.html">Перейти на головну сторінку лабораторної роботи</a></p>
+<h2>Завдання №2 / Лабораторна робота №6</h2>
+<form onsubmit="handleSubmit(event)">
+    <div class="form-group">
+        <label for="emailInput">E-mail</label>
+        <input type="text" id="emailInput" placeholder="example@pnu.edu.ua">
+        <span class="valid-mark">✅</span>
+        <div class="error-message">Введіть правильний e-mail (example@pnu.edu.ua)</div>
+    </div>
+
+    <div class="form-group">
+        <label for="fullNameInput">Ім’я та прізвище</label>
+        <input type="text" id="fullNameInput" placeholder="Ім’я ПРІЗВИЩЕ">
+        <span class="valid-mark">✅</span>
+        <div class="error-message">Ім'я повинно починатися з великої, прізвище — всі великі літери.</div>
+    </div>
+
+    <div class="form-group">
+        <label for="usernameInput">Логін</label>
+        <input type="text" id="usernameInput" placeholder="login123">
+        <span class="valid-mark">✅</span>
+        <div class="error-message">Логін повинен містити лише латинські літери та цифри.</div>
+    </div>
+    <div class="form-group">
+        <label for="passwordInput">Пароль</label>
+        <input type="password" id="passwordInput" placeholder="********">
+        <span class="valid-mark">✅</span>
+        <div class="error-message">Пароль має містити мінімум 8 символів, включаючи букви, цифри та спецсимволи.</div>
+    </div>
+    <div class="form-group">
+        <label for="postalCodeInput">Поштовий індекс</label>
+        <input type="text" id="postalCodeInput" placeholder="77006">
+        <span class="valid-mark">✅</span>
+        <div class="error-message">Поштовий індекс повинен містити 5 цифр.</div>
+    </div>
+    <button onclick="checkForm()">Перевірити</button>
+</form>
+</body>
+</html>
